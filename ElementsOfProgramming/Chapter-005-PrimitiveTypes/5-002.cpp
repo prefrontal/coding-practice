@@ -6,6 +6,16 @@
 
 #include <iostream>
 
+int64_t SwapBits (const int64_t input, const int i, const int j)
+{
+	int64_t output = input;
+	
+	if (((input >> i) & 1) != ((input >> j) & 1)
+		// Swap bits in output
+	
+	return output;	
+}
+
 int main (int argc, char *argv[]) 
 {
 	
