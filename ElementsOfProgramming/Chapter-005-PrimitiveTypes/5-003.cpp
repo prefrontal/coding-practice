@@ -6,7 +6,20 @@
 
 #include <iostream>
 
+int64_t ReverseBits (const int64_t input)
+{
+	int64_t output = 0;
+	
+
+	
+	return output;	
+}
+
 int main (int argc, char *argv[]) 
 {
+	// Function Tests
+	bool passed = true;
+	
+	
 	
 }
