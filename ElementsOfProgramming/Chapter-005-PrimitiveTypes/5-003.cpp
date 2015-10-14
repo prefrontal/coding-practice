@@ -7,14 +7,6 @@
 #include <cmath>
 #include <iostream>
 
-void DisplayBits (const uint64_t input)
-{
-	for (int i = 0; i < 64; i++)
-		std::cout << ((input >> (63-i)) & 1);	
-	
-	std::cout << std::endl;
-}
-
 uint64_t ReverseBits (const uint64_t input)
 {
 	uint64_t output = 0;
@@ -25,13 +17,20 @@ uint64_t ReverseBits (const uint64_t input)
 	return output;	
 }
 
+void DisplayBits (const uint64_t input)
+{
+	for (int i = 0; i < 64; i++)
+		std::cout << ((input >> (63-i)) & 1);	
+	
+	std::cout << std::endl;
+}
+
 int main (int argc, char *argv[]) 
 {
-	// Test the ReverseBits function
 	bool passedTests = true;
 	
-	// Test every possible bit individually
-	for (uint64_t i = 0; i < 64; i++)
+	// Test every possible bit state individually
+	for (int i = 0; i < 64; i++)
 	{
 		uint64_t initialValue = std::pow (2, i);
 		uint64_t trueValue = std::pow (2, (63-i));
