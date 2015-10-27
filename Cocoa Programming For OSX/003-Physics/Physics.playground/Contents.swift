@@ -1,6 +1,10 @@
-//: Playground - noun: a place where people can play
+// Cocoa Programming for OS X
+// Chapter 003 - Physics Playground
 
 import Cocoa
+
+// ------------------------------------------------------------
+// Vector Structure
 
 struct Vector
 {
@@ -22,6 +26,11 @@ struct Vector
     {
         return Vector (x:x + vector.x, y:y + vector.y)
     }
+
+    var angle: Double
+    {
+        return atan2 (y, x)
+    }
 }
 
 func + (left:Vector, right:Vector) -> Vector
@@ -35,6 +44,7 @@ func * (left:Vector, right:Double) -> Vector
 }
 
 // ------------------------------------------------------------
+// Playing With Vectors
 
 let gravity = Vector (x:0.0, y:-9.8)
 gravity.x
@@ -48,6 +58,7 @@ let twoGs2 = gravity + gravity
 let twoGs3 = gravity * 2.0
 
 // ------------------------------------------------------------
+// Particle Class
 
 class Particle
 {
@@ -76,6 +87,7 @@ class Particle
 }
 
 // ------------------------------------------------------------
+// Rocket Subclass
 
 class Rocket : Particle
 {
@@ -111,6 +123,7 @@ class Rocket : Particle
 }
 
 // ------------------------------------------------------------
+// Simulation Class
 
 class Simulation
 {
@@ -148,6 +161,7 @@ class Simulation
 }
 
 // ------------------------------------------------------------
+// Simulation Setup
 
 let simulation = Simulation ()
 
