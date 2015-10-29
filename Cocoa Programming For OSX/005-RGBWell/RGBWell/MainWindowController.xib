@@ -7,7 +7,10 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="RGBWell" customModuleProvider="target">
             <connections>
+                <outlet property="blueSlider" destination="Zkx-LR-OV2" id="ndK-nw-5zU"/>
                 <outlet property="colorWell" destination="kQT-bY-f5G" id="ShB-zT-mbE"/>
+                <outlet property="greenSlider" destination="dR4-Am-nXs" id="fhj-Ye-wEy"/>
+                <outlet property="redSlider" destination="naT-QG-Ipl" id="GUc-pI-7cn"/>
                 <outlet property="window" destination="XLI-ak-abh" id="nel-Mg-iPn"/>
             </connections>
         </customObject>
