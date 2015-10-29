@@ -10,6 +10,8 @@
 		082EC4931BDF4AFC000D63F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082EC4921BDF4AFC000D63F7 /* AppDelegate.swift */; };
 		082EC4951BDF4AFC000D63F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082EC4941BDF4AFC000D63F7 /* Assets.xcassets */; };
 		082EC4981BDF4AFC000D63F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 082EC4961BDF4AFC000D63F7 /* MainMenu.xib */; };
+		083208AB1BE1E61700B13858 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083208AA1BE1E61700B13858 /* MainWindowController.swift */; };
+		083208AF1BE1E7E600B13858 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083208AE1BE1E7E600B13858 /* MainWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		082EC4941BDF4AFC000D63F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		082EC4971BDF4AFC000D63F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		082EC4991BDF4AFC000D63F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		083208AA1BE1E61700B13858 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		083208AE1BE1E7E600B13858 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 				082EC4941BDF4AFC000D63F7 /* Assets.xcassets */,
 				082EC4961BDF4AFC000D63F7 /* MainMenu.xib */,
 				082EC4991BDF4AFC000D63F7 /* Info.plist */,
+				083208AA1BE1E61700B13858 /* MainWindowController.swift */,
+				083208AE1BE1E7E600B13858 /* MainWindowController.xib */,
 			);
 			path = RGBWell;
 			sourceTree = "<group>";
@@ -117,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				082EC4951BDF4AFC000D63F7 /* Assets.xcassets in Resources */,
+				083208AF1BE1E7E600B13858 /* MainWindowController.xib in Resources */,
 				082EC4981BDF4AFC000D63F7 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083208AB1BE1E61700B13858 /* MainWindowController.swift in Sources */,
 				082EC4931BDF4AFC000D63F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +277,7 @@
 				082EC49E1BDF4AFC000D63F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

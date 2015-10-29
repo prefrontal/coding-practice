@@ -1,0 +1,51 @@
+//
+//  MainWindowController.swift
+//  RGBWell
+//
+//  Created by Craig Bennett on 10/28/15.
+//  Copyright © 2015 Voxelwise. All rights reserved.
+//
+
+import Cocoa
+
+class MainWindowController : NSWindowController
+{
+    var r = 0.0
+    var g = 0.0
+    var b = 0.0
+    var a = 1.0
+
+    @IBOutlet weak var colorWell: NSColorWell!
+
+    override var windowNibName: String?
+    {
+        return "MainWindowController"
+    }
+
+    @IBAction func adjustRed (sender: NSSlider)
+    {
+        r = sender.doubleValue
+        print ("Red slider value is \(r)")
+        updateColor()
+    }
+
+    @IBAction func adjustGreen (sender: NSSlider)
+    {
+        g = sender.doubleValue
+        print ("Green slider value is \(g)")
+        updateColor()
+    }
+
+    @IBAction func adjustBlue (sender: NSSlider)
+    {
+        b = sender.doubleValue
+        print ("Blue slider value is \(b)")
+        updateColor()
+    }
+
+    func updateColor ()
+    {
+        let newColor = NSColor (calibratedRed: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: CGFloat(a))
+        colorWell.color = newColor
+    }
+}
