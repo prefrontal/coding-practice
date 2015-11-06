@@ -51,7 +51,7 @@ CA
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0P-q7-tmo">
                         <rect key="frame" x="20" y="20" width="343" height="373"/>
                         <clipView key="contentView" ambiguous="YES" id="4q2-x4-vs0">
-                            <rect key="frame" x="1" y="23" width="341" height="349"/>
+                            <rect key="frame" x="1" y="0.0" width="341" height="372"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="xek-8D-NGn" viewBased="YES" id="AA3-R5-OW9">
@@ -73,6 +73,7 @@ CA
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
+                                            <sortDescriptor key="sortDescriptorPrototype" selector="caseInsensitiveCompare:" sortKey="name"/>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="Vw2-TF-Jkv">
@@ -114,6 +115,7 @@ CA
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
+                                            <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="raise"/>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="dg5-vF-pSZ">
@@ -124,6 +126,9 @@ CA
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
                                                             <animations/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="kpN-VG-8V5">
+                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="percent" lenient="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="igx-SS-sbg">
+                                                                    <integer key="multiplier" value="100"/>
+                                                                </numberFormatter>
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -144,6 +149,7 @@ CA
                                     <connections>
                                         <binding destination="4V2-k1-8lm" name="content" keyPath="arrangedObjects" id="hvg-Oy-TYO"/>
                                         <binding destination="4V2-k1-8lm" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="hvg-Oy-TYO" id="8bE-uJ-7Gu"/>
+                                        <binding destination="4V2-k1-8lm" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="8bE-uJ-7Gu" id="p1I-cv-jg9"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -152,11 +158,11 @@ CA
                         </clipView>
                         <animations/>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Woj-1S-Mfe">
-                            <rect key="frame" x="1" y="119" width="223" height="15"/>
+                            <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="W0K-Y0-af8">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="W0K-Y0-af8">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
