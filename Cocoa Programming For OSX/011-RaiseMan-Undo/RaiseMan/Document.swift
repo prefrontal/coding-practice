@@ -13,7 +13,7 @@ class Document: NSDocument
 
     var employees: [Employee] = []
 
-    // MARK - Controller Methods
+    // MARK: - Controller Methods
 
     override init ()
     {
@@ -54,6 +54,41 @@ class Document: NSDocument
         throw NSError (domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
 
+    // MARK: - Accessors
+
+    func insertObject (employee: Employee, inEmployeesAtIndex index: Int)
+    {
+        print ("Adding \(employee) to the employees array")
+
+        // Add the inverse of this operation to the undo stack
+        let undo: NSUndoManager = undoManager!
+        undo.prepareWithInvocationTarget(self).removeObjectFromEmployeesAtIndex (employees.count)
+
+        if !undo.undoing
+        {
+            undo.setActionName ("Add Person")
+        }
+
+        employees.append (employee)
+    }
+
+    func removeObjectFromEmployeesAtIndex (index: Int)
+    {
+        let employee: Employee = employees[index]
+        print ("Removing \(employee) from the employees array")
+
+        // Add the inverse of this operation to the undo stack
+        let undo: NSUndoManager = undoManager!
+        undo.prepareWithInvocationTarget(self).insertObject (employee, inEmployeesAtIndex: index)
+
+        if !undo.undoing
+        {
+            undo.setActionName("Remove Person")
+        }
+
+        // Remove employee from the array
+        employees.removeAtIndex(index)
+    }
 
 }
 
