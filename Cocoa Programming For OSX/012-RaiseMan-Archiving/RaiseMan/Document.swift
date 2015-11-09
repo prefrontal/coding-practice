@@ -110,7 +110,13 @@ class Document: NSDocument, NSWindowDelegate
     {
         // Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
         // You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-        throw NSError (domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        // throw NSError (domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+
+        // End editing
+        tableView.window?.endEditingFor(nil)
+
+        // Create an NSData object from the employees array
+        return NSKeyedArchiver.archivedDataWithRootObject(employees)
     }
 
     override func readFromData (data: NSData, ofType typeName: String) throws
@@ -118,7 +124,10 @@ class Document: NSDocument, NSWindowDelegate
         // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
         // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
         // If you override either of these, you should also override -isEntireFileLoaded to return false if the contents are lazily loaded.
-        throw NSError (domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        // throw NSError (domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+
+        print ("About to read data of type \(typeName)")
+        employees = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Employee]
     }
 
     // MARK: - Accessors

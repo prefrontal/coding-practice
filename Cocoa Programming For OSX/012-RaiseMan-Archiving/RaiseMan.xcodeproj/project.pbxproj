@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080056BB1BF02ED800253C31 /* txt.icns in Resources */ = {isa = PBXBuildFile; fileRef = 080056BA1BF02ED800253C31 /* txt.icns */; };
 		08611E051BEB0B68005704AA /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08611E041BEB0B68005704AA /* Employee.swift */; };
 		08960C251BE6D18F0045451D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08960C241BE6D18F0045451D /* AppDelegate.swift */; };
 		08960C271BE6D18F0045451D /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08960C261BE6D18F0045451D /* Document.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		080056BA1BF02ED800253C31 /* txt.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = txt.icns; sourceTree = "<group>"; };
 		08611E041BEB0B68005704AA /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		08960C211BE6D18F0045451D /* RaiseMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08960C241BE6D18F0045451D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				08960C2D1BE6D18F0045451D /* MainMenu.xib */,
 				08960C301BE6D18F0045451D /* Info.plist */,
 				08611E041BEB0B68005704AA /* Employee.swift */,
+				080056BA1BF02ED800253C31 /* txt.icns */,
 			);
 			path = RaiseMan;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 				08960C2C1BE6D18F0045451D /* Assets.xcassets in Resources */,
 				08960C2A1BE6D18F0045451D /* Document.xib in Resources */,
 				08960C2F1BE6D18F0045451D /* MainMenu.xib in Resources */,
+				080056BB1BF02ED800253C31 /* txt.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
