@@ -10,6 +10,24 @@
 
 @implementation BNRItem
 
+#pragma mark Accessors
+
+@synthesize containedItem;
+@synthesize container;
+@synthesize itemName;
+@synthesize serialNumber;
+@synthesize valueInDollars;
+@synthesize dateCreated;
+
+- (void) setContainedItem: (BNRItem *)i
+{
+    containedItem = i;
+
+    // When given an item to contain the contained item will be
+    // given a pointer to its container
+    [i setContainer:self];
+}
+
 #pragma mark Class Methods
 
 + (id) randomItem
@@ -50,6 +68,8 @@
 
 #pragma mark Instance Methods
 
+
+
 - (id) init
 {
     return [self initWithItemName:@"Iten" valueInDollars:0 serialNumber:@""];
@@ -75,39 +95,9 @@
     return self;
 }
 
-- (void) setItemName: (NSString *)str;
+- (void) dealloc
 {
-    itemName = str;
-}
-
-- (NSString *) itemName;
-{
-    return itemName;
-}
-
-- (void) setSerialNumber: (NSString *)str;
-{
-    serialNumber = str;
-}
-
-- (NSString *) serialNumber;
-{
-    return serialNumber;
-}
-
-- (void) setValueInDollars: (int)i;
-{
-    valueInDollars = i;
-}
-
-- (int) valueInDollars;
-{
-    return valueInDollars;
-}
-
-- (NSDate *) dateCreated
-{
-    return dateCreated;
+    NSLog (@"Destroyed: %@", self);
 }
 
 - (NSString *) description
