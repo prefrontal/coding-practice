@@ -29,6 +29,12 @@
     [locationManager requestWhenInUseAuthorization];
 }
 
+- (void) dealloc
+{
+    // Tell the location manager to stop sending us messages
+    [locationManager setDelegate:nil];
+}
+
 #pragma mark Location Manager Delegate Methods
 
 -(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -38,14 +44,24 @@
         // Make it as accurate as possible, regardless of power or time
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
 
+        [locationManager setDistanceFilter:50];
+        [locationManager setHeadingFilter:0.5];
+
         // Tell the manager to start looking for its location immediately
         [locationManager startUpdatingLocation];
+        [locationManager startUpdatingHeading];
     }
 }
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog (@"%@", newLocation);
+}
+
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+    NSLog (@"%@", newHeading);
 }
 
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error
