@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="au3-Pv-rYb">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="au3-Pv-rYb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="M7K-jM-vMQ"/>
                                 </connections>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86B-qH-pDD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86B-qH-pDD">
                                 <rect key="frame" x="60" y="28" width="481" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -33,13 +34,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4Cm-IT-aDj"/>
                                 </connections>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2vJ-pe-9HW">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2vJ-pe-9HW">
                                 <rect key="frame" x="554" y="33" width="20" height="20"/>
                                 <animations/>
                             </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="au3-Pv-rYb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AIb-qV-8gz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="au3-Pv-rYb" secondAttribute="bottom" id="IO1-rT-4hf"/>
+                            <constraint firstItem="86B-qH-pDD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="KQr-5S-wZ8"/>
+                            <constraint firstAttribute="trailing" secondItem="au3-Pv-rYb" secondAttribute="trailing" id="KuK-8T-2ia"/>
+                            <constraint firstItem="86B-qH-pDD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ovs-Y1-6wQ"/>
+                            <constraint firstItem="2vJ-pe-9HW" firstAttribute="leading" secondItem="86B-qH-pDD" secondAttribute="trailing" constant="13" id="YEa-5P-2IY"/>
+                            <constraint firstItem="au3-Pv-rYb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aCg-mp-ClT"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="2vJ-pe-9HW" id="xLn-Qf-H84"/>

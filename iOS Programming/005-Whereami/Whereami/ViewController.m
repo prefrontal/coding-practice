@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "BNRMapPoint.h"
+
 @interface ViewController ()
 
 @end
@@ -37,33 +39,54 @@
     [locationManager setDelegate:nil];
 }
 
-#pragma mark Location Manager Delegate Methods
+#pragma mark General Controller Methods
 
-//-(void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
-//{
-//    if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways)
-//    {
-//        // Make it as accurate as possible, regardless of power or time
-//        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-//
-//        [locationManager setDistanceFilter:50];
-//        [locationManager setHeadingFilter:0.5];
-//
-//        // Tell the manager to start looking for its location immediately
-//        [locationManager startUpdatingLocation];
-//        [locationManager startUpdatingHeading];
-//    }
-//}
-
--(void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+- (void) findLocation
 {
-    NSLog (@"%@", newLocation);
+    [locationManager startUpdatingLocation];
+    [activityIndicator startAnimating];
+    [locationTitleField setHidden:YES];
 }
 
-
--(void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+- (void) foundLocation: (CLLocation *)loc
 {
-    NSLog (@"%@", newHeading);
+    CLLocationCoordinate2D coord = [loc coordinate];
+
+    // Create an instance of BNRMapPoint with the current data
+    BNRMapPoint *mp = [[BNRMapPoint alloc] initWithCoordinate:coord title:[locationTitleField text]];
+
+    // Add it to the map view
+    [worldView addAnnotation:mp];
+
+    // Zoom the region to this location
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (coord, 250, 250);
+    [worldView setRegion:region animated:YES];
+
+    // Reset the UI
+    [locationTitleField setText:@""];
+    [activityIndicator stopAnimating];
+    [locationTitleField setHidden:NO];
+    [locationManager stopUpdatingLocation];
+}
+
+#pragma mark Location Manager Delegate Methods
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    // How many seconds ago was this new location created?
+    NSTimeInterval t = [[newLocation timestamp] timeIntervalSinceNow];
+
+    // CLLocationManagers will retun the las found location of the device first,
+    // you don't want the data in this case.  If this location was more than
+    // three minutes ago then ignore it.
+
+    if (t < -180)
+    {
+        // This is cached data, ignore it
+        return;
+    }
+
+    [self foundLocation:newLocation];
 }
 
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error
@@ -78,6 +101,16 @@
     CLLocationCoordinate2D loc = [userLocation coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 2500, 2500);
     [worldView setRegion:region animated:YES];
+}
+
+#pragma mark Text Field Delegate methods
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [self findLocation];
+    [textField resignFirstResponder];
+
+    return YES;
 }
 
 @end
