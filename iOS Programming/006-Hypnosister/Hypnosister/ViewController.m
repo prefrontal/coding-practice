@@ -8,38 +8,60 @@
 
 #import "ViewController.h"
 
-#import "HypnosisView.h"
-
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+@synthesize firstHypnosisView;
+
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    CGRect viewFrame = CGRectMake (160, 240, 100, 150);
+    CGRect screenRect = [self.view bounds];
 
-    HypnosisView *view = [[HypnosisView alloc] initWithFrame:viewFrame];
-    [view setBackgroundColor:[UIColor redColor]];
+    // Create a UIScrollView that is the size of the screen
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [scrollView setMinimumZoomScale:1.0];
+    [scrollView setMaximumZoomScale:5.0];
+    [scrollView setDelegate:self];
+    
+    [self.view addSubview:scrollView];
 
-    [self.view addSubview:view];
+    // Add the first HypnosisView as a subview of the scrollView
+    firstHypnosisView = [[HypnosisView alloc] initWithFrame:screenRect];
+    [scrollView addSubview:firstHypnosisView];
 
-    CGRect anotherFrame = CGRectMake (80, 120, 100, 150);
-
-    HypnosisView *anotherView = [[HypnosisView alloc] initWithFrame:anotherFrame];
-    [anotherView setBackgroundColor:[UIColor blueColor]];
-
-    [self.view addSubview:anotherView];
+    // Tell the scrollView how big its virtual view is
+    CGRect bigRect = screenRect;
+    [scrollView setContentSize:bigRect.size];
 }
 
-- (void)didReceiveMemoryWarning
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark First Responder Actions
+
+- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        NSLog (@"Device started shaking!");
+        [firstHypnosisView setCircleColor:[UIColor redColor]];
+    }
+}
+
+#pragma mark UIScrollViewDelegate Methods
+
+- (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.view;
 }
 
 @end

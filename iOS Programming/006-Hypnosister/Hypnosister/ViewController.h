@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "HypnosisView.h"
 
+@interface ViewController : UIViewController <UIScrollViewDelegate>
+
+@property (nonatomic, strong) HypnosisView *firstHypnosisView;
 
 @end
 
