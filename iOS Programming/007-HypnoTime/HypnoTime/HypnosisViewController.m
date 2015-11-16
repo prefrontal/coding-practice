@@ -18,6 +18,16 @@
 
 - (void) loadView
 {
+    // Get the tab bair item
+    UITabBarItem *tbi = [self tabBarItem];
+
+    // Provide the tab bar with a label
+    [tbi setTitle:@"Hypnosis"];
+
+    // Provide the tab bar with an image
+    UIImage *i = [UIImage imageNamed:@"Hypno.png"];
+    [tbi setImage:i];
+
     // Create a view
     CGRect frame = [[UIScreen mainScreen] bounds];
     HypnosisView *v = [[HypnosisView alloc] initWithFrame:frame];
@@ -30,6 +40,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    NSLog (@"Hypnosis View loaded");
 }
 
 - (void) didReceiveMemoryWarning

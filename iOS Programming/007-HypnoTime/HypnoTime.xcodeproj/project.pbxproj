@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0802BA711BF929E300043873 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0802BA701BF929E300043873 /* TimeViewController.m */; };
+		0802BA771BF92E3F00043873 /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = 0802BA731BF92E3F00043873 /* Hypno.png */; };
+		0802BA781BF92E3F00043873 /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0802BA741BF92E3F00043873 /* Hypno@2x.png */; };
+		0802BA791BF92E3F00043873 /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = 0802BA751BF92E3F00043873 /* Time.png */; };
+		0802BA7A1BF92E3F00043873 /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0802BA761BF92E3F00043873 /* Time@2x.png */; };
 		08C41C001BF835C700FEC7B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C41BFF1BF835C700FEC7B7 /* main.m */; };
 		08C41C031BF835C700FEC7B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C41C021BF835C700FEC7B7 /* AppDelegate.m */; };
 		08C41C061BF835C700FEC7B7 /* HypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C41C051BF835C700FEC7B7 /* HypnosisViewController.m */; };
@@ -17,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0802BA6F1BF929E300043873 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		0802BA701BF929E300043873 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		0802BA731BF92E3F00043873 /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hypno.png; sourceTree = "<group>"; };
+		0802BA741BF92E3F00043873 /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
+		0802BA751BF92E3F00043873 /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Time.png; sourceTree = "<group>"; };
+		0802BA761BF92E3F00043873 /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time@2x.png"; sourceTree = "<group>"; };
 		08C41BFB1BF835C600FEC7B7 /* HypnoTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypnoTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C41BFF1BF835C700FEC7B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		08C41C011BF835C700FEC7B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0802BA721BF92E3000043873 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0802BA731BF92E3F00043873 /* Hypno.png */,
+				0802BA741BF92E3F00043873 /* Hypno@2x.png */,
+				0802BA751BF92E3F00043873 /* Time.png */,
+				0802BA761BF92E3F00043873 /* Time@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		08C41BF21BF835C600FEC7B7 = {
 			isa = PBXGroup;
 			children = (
@@ -67,10 +89,13 @@
 				08C41C051BF835C700FEC7B7 /* HypnosisViewController.m */,
 				08C41C151BF8366700FEC7B7 /* HypnosisView.h */,
 				08C41C161BF8366700FEC7B7 /* HypnosisView.m */,
+				0802BA6F1BF929E300043873 /* TimeViewController.h */,
+				0802BA701BF929E300043873 /* TimeViewController.m */,
 				08C41C071BF835C700FEC7B7 /* Main.storyboard */,
 				08C41C0A1BF835C700FEC7B7 /* Assets.xcassets */,
 				08C41C0C1BF835C700FEC7B7 /* LaunchScreen.storyboard */,
 				08C41C0F1BF835C700FEC7B7 /* Info.plist */,
+				0802BA721BF92E3000043873 /* Resources */,
 				08C41BFE1BF835C600FEC7B7 /* Supporting Files */,
 			);
 			path = HypnoTime;
@@ -142,8 +167,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0802BA7A1BF92E3F00043873 /* Time@2x.png in Resources */,
+				0802BA791BF92E3F00043873 /* Time.png in Resources */,
 				08C41C0E1BF835C700FEC7B7 /* LaunchScreen.storyboard in Resources */,
 				08C41C0B1BF835C700FEC7B7 /* Assets.xcassets in Resources */,
+				0802BA771BF92E3F00043873 /* Hypno.png in Resources */,
+				0802BA781BF92E3F00043873 /* Hypno@2x.png in Resources */,
 				08C41C091BF835C700FEC7B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +188,7 @@
 				08C41C171BF8366700FEC7B7 /* HypnosisView.m in Sources */,
 				08C41C031BF835C700FEC7B7 /* AppDelegate.m in Sources */,
 				08C41C001BF835C700FEC7B7 /* main.m in Sources */,
+				0802BA711BF929E300043873 /* TimeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +335,7 @@
 				08C41C141BF835C700FEC7B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
