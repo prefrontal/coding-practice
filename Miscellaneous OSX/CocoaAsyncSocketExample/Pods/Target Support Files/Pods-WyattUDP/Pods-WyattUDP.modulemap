@@ -1,0 +1,6 @@
+framework module Pods_WyattUDP {
+  umbrella header "Pods-WyattUDP-umbrella.h"
+
+  export *
+  module * { export * }
+}
