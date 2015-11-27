@@ -36,10 +36,10 @@
 
 #pragma mark UITableView
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[[BNRItemStore sharedStore] allItems] count];
-}
+//- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return [[[BNRItemStore sharedStore] allItems] count];
+//}
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -54,11 +54,60 @@
 
     // Set the text on the cell of the cell with the desciption of the item that is at the nth index
     // of items, where n = row this cell will appear on in the tableview
-    BNRItem *p = [[[BNRItemStore sharedStore] allItems] objectAtIndex:[indexPath row]];
+
+    NSMutableArray *tempArray = [NSMutableArray new];
+
+    for (BNRItem *p in [[BNRItemStore sharedStore] allItems])
+    {
+        if ((indexPath.section == 0) && (p.valueInDollars < 50))
+            [tempArray addObject:p];
+        else if ((indexPath.section == 1) && (p.valueInDollars > 50))
+            [tempArray addObject:p];
+    }
+
+    BNRItem *p = [tempArray objectAtIndex:[indexPath row]];
 
     [[cell textLabel] setText:[p description]];
 
     return cell;
+}
+
+// ----------
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+        return @"< $50";
+    else
+        return @"> $50";
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    NSInteger count = 0;
+
+    for (BNRItem *p in [[BNRItemStore sharedStore] allItems])
+    {
+        if (section == 0)
+        {
+            if (p.valueInDollars < 50)
+                count++;
+        }
+        else if (section == 1)
+        {
+            if (p.valueInDollars > 50)
+                count++;
+        }
+    }
+
+    return count;
 }
 
 @end
