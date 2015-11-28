@@ -16,6 +16,7 @@
 		087814231C028A0A00D0751C /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 087814221C028A0A00D0751C /* ItemsViewController.m */; };
 		087814291C028C7C00D0751C /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 087814281C028C7C00D0751C /* BNRItem.m */; };
 		0878142C1C028CCE00D0751C /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0878142B1C028CCE00D0751C /* BNRItemStore.m */; };
+		08A4694F1C09321800842DF2 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08A4694E1C09321800842DF2 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		087814281C028C7C00D0751C /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		0878142A1C028CCE00D0751C /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		0878142B1C028CCE00D0751C /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		08A4694E1C09321800842DF2 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				087814271C028C7C00D0751C /* BNRItem.h */,
 				087814281C028C7C00D0751C /* BNRItem.m */,
 				087814101C02895000D0751C /* Main.storyboard */,
+				08A4694E1C09321800842DF2 /* HeaderView.xib */,
 				087814131C02895000D0751C /* Assets.xcassets */,
 				087814151C02895000D0751C /* LaunchScreen.storyboard */,
 				087814181C02895000D0751C /* Info.plist */,
@@ -155,6 +158,7 @@
 				087814171C02895000D0751C /* LaunchScreen.storyboard in Resources */,
 				087814141C02895000D0751C /* Assets.xcassets in Resources */,
 				087814121C02895000D0751C /* Main.storyboard in Resources */,
+				08A4694F1C09321800842DF2 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
