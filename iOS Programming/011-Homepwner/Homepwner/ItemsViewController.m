@@ -20,10 +20,22 @@
 
     if (self)
     {
-//        for (int i = 0; i < 5; i++)
-//        {
-//            [[BNRItemStore sharedStore] createItem];
-//        }
+        UINavigationItem *n = [self navigationItem];
+        [n setTitle:@"Homepwner"];
+
+        for (int i = 0; i < 5; i++)
+        {
+            [[BNRItemStore sharedStore] createItem];
+        }
+
+        // Create a new bar button item that will send addNetItem: to ItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
+
+        // Set this bar button item as the right item in the navigationItem
+        [[self navigationItem] setRightBarButtonItem:bbi];
+
+        // Create a new bar button item that will toggle editing mode
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     }
 
     return self;
@@ -32,6 +44,12 @@
 - (id) initWithStyle
 {
     return [self init];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
 }
 
 #pragma mark UITableView
@@ -61,51 +79,21 @@
     return cell;
 }
 
-#pragma mark Tabel View Header Methods
-
-- (UIView *) headerView
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // If we haven't loaded the header view yet...
-    if (!headerView)
-    {
-        // Load HeaderView.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
 
-    return headerView;
-}
+    NSArray *items = [[BNRItemStore sharedStore] allItems];
+    BNRItem *selectedItem = [items objectAtIndex:[indexPath row]];
 
-- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return [self headerView];
-}
+    // Give detail view controller a pointer to the item object in row
+    [detailViewController setItem: selectedItem];
 
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    // The height of the header view should be determined from the height of the view in the XIB file
-    return [[self headerView] bounds].size.height;
+    // Push it one top of the navigation controller's stack
+    [[self navigationController] pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark Table Edit Mode Methods
-
-- (IBAction) toggleEditingMode:(id)sender
-{
-    // If we are currently in editing mode
-    if ([self isEditing])
-    {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-    }
-    else
-    {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        // Enter editing mode
-        [self setEditing:YES animated:YES];
-    }
-}
 
 - (IBAction) addNewItem:(id)sender
 {
