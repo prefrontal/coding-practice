@@ -15,6 +15,7 @@
                             <dateFormatterStyle key="dateStyle" short="YES"/>
                             <dateFormatterStyle key="timeStyle" short="YES"/>
                         </dateLabel>
+                        <switch width="1" alignment="left" value="YES" title="Awesome Mode" id="uZi-pO-RWF"/>
                     </items>
                 </controller>
             </objects>
