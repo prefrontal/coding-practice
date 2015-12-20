@@ -11,4 +11,8 @@
 
 @interface InterfaceController : WKInterfaceController
 
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *airportName;
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *metarText;
+
 @end
