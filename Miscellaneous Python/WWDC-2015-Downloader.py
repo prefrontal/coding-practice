@@ -130,7 +130,7 @@ for session in sessionList:
 
     # Get the page source for the video session page
     sessionPage = "https://developer.apple.com" + session;
-    sessionPage = "https://developer.apple.com/videos/play/wwdc2015-804/"
+
     page = urllib.request.urlopen(sessionPage)
     pageSource = page.read().decode('utf-8')
     
@@ -145,11 +145,11 @@ for session in sessionList:
     
     # Find the filename of the video
     expression = '([^/]*mp4)'
-    regexResult = re.search (expression, pageSource)
+    regexResult = re.search (expression, videoUrl)
     filename = regexResult.group(0)
     
     # Save the video
-    filePath = "/Users/cbennett/Desktop/" + filename;
+    filePath = "/Users/prefrontal/Desktop/WWDC-2015/" + filename;
     output = open (filePath, 'wb')
     output.write (video.read())
     output.close()
@@ -157,7 +157,7 @@ for session in sessionList:
     # For debugging...
     #person = input('-WAIT-')
 
-Print ("Downloading complete.")
+print ("Downloading complete.")
 
 
 
