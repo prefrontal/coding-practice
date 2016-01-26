@@ -16,3 +16,6 @@ By Adnan Aziz, Tsung-Hsien Lee, and Amit Prakash
 
 *iOS Programming: The Big Nerd Ranch Guide* (5th Edition)
 By Joe Conway and Aaron Hillegass
+
+*Swift Programming: The Big Nerd Ranch Guide*
+By Matthew Mathias and John Gallagher
