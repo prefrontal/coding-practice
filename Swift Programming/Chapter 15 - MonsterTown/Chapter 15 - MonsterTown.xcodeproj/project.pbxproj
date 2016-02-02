@@ -1,0 +1,258 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		087FCFAC1C5EF8DB004AFB2C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FCFAB1C5EF8DB004AFB2C /* main.swift */; };
+		087FCFB31C5EF918004AFB2C /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FCFB21C5EF918004AFB2C /* Town.swift */; };
+		087FCFB51C5EFACB004AFB2C /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FCFB41C5EFACB004AFB2C /* Monster.swift */; };
+		087FCFB71C5EFB91004AFB2C /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FCFB61C5EFB91004AFB2C /* Zombie.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		087FCFA61C5EF8DB004AFB2C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		087FCFA81C5EF8DB004AFB2C /* Chapter 15 - MonsterTown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Chapter 15 - MonsterTown"; sourceTree = BUILT_PRODUCTS_DIR; };
+		087FCFAB1C5EF8DB004AFB2C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		087FCFB21C5EF918004AFB2C /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
+		087FCFB41C5EFACB004AFB2C /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		087FCFB61C5EFB91004AFB2C /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		087FCFA51C5EF8DB004AFB2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		087FCF9F1C5EF8DB004AFB2C = {
+			isa = PBXGroup;
+			children = (
+				087FCFAA1C5EF8DB004AFB2C /* Chapter 15 - MonsterTown */,
+				087FCFA91C5EF8DB004AFB2C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		087FCFA91C5EF8DB004AFB2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				087FCFA81C5EF8DB004AFB2C /* Chapter 15 - MonsterTown */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		087FCFAA1C5EF8DB004AFB2C /* Chapter 15 - MonsterTown */ = {
+			isa = PBXGroup;
+			children = (
+				087FCFAB1C5EF8DB004AFB2C /* main.swift */,
+				087FCFB21C5EF918004AFB2C /* Town.swift */,
+				087FCFB41C5EFACB004AFB2C /* Monster.swift */,
+				087FCFB61C5EFB91004AFB2C /* Zombie.swift */,
+			);
+			path = "Chapter 15 - MonsterTown";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		087FCFA71C5EF8DB004AFB2C /* Chapter 15 - MonsterTown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 087FCFAF1C5EF8DB004AFB2C /* Build configuration list for PBXNativeTarget "Chapter 15 - MonsterTown" */;
+			buildPhases = (
+				087FCFA41C5EF8DB004AFB2C /* Sources */,
+				087FCFA51C5EF8DB004AFB2C /* Frameworks */,
+				087FCFA61C5EF8DB004AFB2C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chapter 15 - MonsterTown";
+			productName = "Chapter 15 - MonsterTown";
+			productReference = 087FCFA81C5EF8DB004AFB2C /* Chapter 15 - MonsterTown */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		087FCFA01C5EF8DB004AFB2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Voxelwise;
+				TargetAttributes = {
+					087FCFA71C5EF8DB004AFB2C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 087FCFA31C5EF8DB004AFB2C /* Build configuration list for PBXProject "Chapter 15 - MonsterTown" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 087FCF9F1C5EF8DB004AFB2C;
+			productRefGroup = 087FCFA91C5EF8DB004AFB2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				087FCFA71C5EF8DB004AFB2C /* Chapter 15 - MonsterTown */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		087FCFA41C5EF8DB004AFB2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				087FCFAC1C5EF8DB004AFB2C /* main.swift in Sources */,
+				087FCFB71C5EFB91004AFB2C /* Zombie.swift in Sources */,
+				087FCFB51C5EFACB004AFB2C /* Monster.swift in Sources */,
+				087FCFB31C5EF918004AFB2C /* Town.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		087FCFAD1C5EF8DB004AFB2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		087FCFAE1C5EF8DB004AFB2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		087FCFB01C5EF8DB004AFB2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		087FCFB11C5EF8DB004AFB2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		087FCFA31C5EF8DB004AFB2C /* Build configuration list for PBXProject "Chapter 15 - MonsterTown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				087FCFAD1C5EF8DB004AFB2C /* Debug */,
+				087FCFAE1C5EF8DB004AFB2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		087FCFAF1C5EF8DB004AFB2C /* Build configuration list for PBXNativeTarget "Chapter 15 - MonsterTown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				087FCFB01C5EF8DB004AFB2C /* Debug */,
+				087FCFB11C5EF8DB004AFB2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 087FCFA01C5EF8DB004AFB2C /* Project object */;
+}
