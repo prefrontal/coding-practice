@@ -1,0 +1,158 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "myTown"
+- "ts"
+- "fredTheZombie"
+provides-nominal:
+provides-member:
+provides-dynamic-lookup:
+depends-top-level:
+- "ts"
+- "Town"
+- "StringLiteralType"
+- "IntegerLiteralType"
+- "fredTheZombie"
+- "BooleanLiteralType"
+- "FloatLiteralType"
+- "print"
+- "Zombie"
+- "myTown"
+depends-member:
+- ["PSs9AnyObject", "changeName"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "isTerrifying"]
+- ["PSs9AnyObject", "spookyNoise"]
+- ["PSs9AnyObject", "terrorizeTown"]
+- ["PSs9AnyObject", "town"]
+- ["PSs9AnyObject", "victimPool"]
+- ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- ["PSs11CVarArgType", "init"]
+- ["VSs9Character", "deinit"]
+- ["PSs10Comparable", "init"]
+- ["PSs28CustomDebugStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["Sd", "deinit"]
+- ["PSs9Equatable", "_getBuiltinLogicValue"]
+- ["PSs9Equatable", "init"]
+- ["PSs41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- ["Sf", "deinit"]
+- ["PSs8Hashable", "_getBuiltinLogicValue"]
+- ["PSs8Hashable", "init"]
+- ["Si", "deinit"]
+- ["VSs5Int16", "deinit"]
+- ["VSs5Int32", "deinit"]
+- ["VSs5Int64", "deinit"]
+- ["VSs4Int8", "deinit"]
+- ["PSs14MirrorPathType", "init"]
+- ["C24Chapter_15___MonsterTown7Monster", "changeName"]
+- ["C24Chapter_15___MonsterTown7Monster", "init"]
+- ["C24Chapter_15___MonsterTown7Monster", "isTerrifying"]
+- ["C24Chapter_15___MonsterTown7Monster", "spookyNoise"]
+- ["C24Chapter_15___MonsterTown7Monster", "terrorizeTown"]
+- ["C24Chapter_15___MonsterTown7Monster", "town"]
+- ["C24Chapter_15___MonsterTown7Monster", "victimPool"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
+- ["CSo8NSObject", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- ["CSo8NSString", "deinit"]
+- ["CSo8NSString", "init"]
+- ["PSs16OutputStreamType", "init"]
+- ["PSs10Streamable", "init"]
+- ["SS", "init"]
+- ["PSs30StringInterpolationConvertible", "init"]
+- ["PSs24StringLiteralConvertible", "init"]
+- ["V24Chapter_15___MonsterTown4Town", "changePopulation"]
+- ["V24Chapter_15___MonsterTown4Town", "init"]
+- ["V24Chapter_15___MonsterTown4Town", "printTownDescription"]
+- ["V24Chapter_15___MonsterTown4Town", "townSize"]
+- ["Su", "deinit"]
+- ["VSs6UInt16", "deinit"]
+- ["VSs6UInt32", "deinit"]
+- ["VSs6UInt64", "deinit"]
+- ["VSs5UInt8", "deinit"]
+- ["Sc", "deinit"]
+- ["PSs31UnicodeScalarLiteralConvertible", "init"]
+- ["C24Chapter_15___MonsterTown6Zombie", "changeName"]
+- ["C24Chapter_15___MonsterTown6Zombie", "init"]
+- ["C24Chapter_15___MonsterTown6Zombie", "isTerrifying"]
+- ["C24Chapter_15___MonsterTown6Zombie", "spookyNoise"]
+- ["C24Chapter_15___MonsterTown6Zombie", "terrorizeTown"]
+- ["C24Chapter_15___MonsterTown6Zombie", "town"]
+- ["C24Chapter_15___MonsterTown6Zombie", "victimPool"]
+- ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- ["PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- ["PSs32_BuiltinStringLiteralConvertible", "init"]
+- ["PSs37_BuiltinUTF16StringLiteralConvertible", "init"]
+- ["PSs39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- ["PSs16_CocoaStringType", "init"]
+- ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- ["PSs21_ObjectiveCBridgeable", "init"]
+- ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- ["PSs12_Reflectable", "init"]
+depends-nominal:
+- "PSs9AnyObject"
+- "Sb"
+- "PSs25BooleanLiteralConvertible"
+- "PSs11BooleanType"
+- "PSs11CVarArgType"
+- "VSs9Character"
+- "PSs10Comparable"
+- "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- "Sd"
+- "PSs9Equatable"
+- "PSs41ExtendedGraphemeClusterLiteralConvertible"
+- "Sf"
+- "PSs8Hashable"
+- "Si"
+- "VSs5Int16"
+- "VSs5Int32"
+- "VSs5Int64"
+- "VSs4Int8"
+- "PSs14MirrorPathType"
+- "C24Chapter_15___MonsterTown7Monster"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- "PSs16OutputStreamType"
+- "PSs10Streamable"
+- "SS"
+- "PSs30StringInterpolationConvertible"
+- "PSs24StringLiteralConvertible"
+- "V24Chapter_15___MonsterTown4Town"
+- "Su"
+- "VSs6UInt16"
+- "VSs6UInt32"
+- "VSs6UInt64"
+- "VSs5UInt8"
+- "Sc"
+- "PSs31UnicodeScalarLiteralConvertible"
+- "C24Chapter_15___MonsterTown6Zombie"
+- "PSs33_BuiltinBooleanLiteralConvertible"
+- "PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- "PSs32_BuiltinStringLiteralConvertible"
+- "PSs37_BuiltinUTF16StringLiteralConvertible"
+- "PSs39_BuiltinUnicodeScalarLiteralConvertible"
+- "PSs16_CocoaStringType"
+- "PSs21_ObjectiveCBridgeable"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+interface-hash: "eff641757c44381f108824993206710b"
