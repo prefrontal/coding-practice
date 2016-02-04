@@ -1,0 +1,8 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "1af352eb9609bc6208ddc321e2b724a3"
+build_time: [507799931, 977072000]
+inputs:
+  "/Users/prefrontal/Development/Github-Prefrontal/coding-practice/Swift Programming/Chapter 16 - MonsterTown, Properties/Chapter 15 - MonsterTown/Town.swift": [507799931, 0]
+  "/Users/prefrontal/Development/Github-Prefrontal/coding-practice/Swift Programming/Chapter 16 - MonsterTown, Properties/Chapter 15 - MonsterTown/main.swift": [507799931, 0]
+  "/Users/prefrontal/Development/Github-Prefrontal/coding-practice/Swift Programming/Chapter 16 - MonsterTown, Properties/Chapter 15 - MonsterTown/Zombie.swift": [507799931, 0]
+  "/Users/prefrontal/Development/Github-Prefrontal/coding-practice/Swift Programming/Chapter 16 - MonsterTown, Properties/Chapter 15 - MonsterTown/Monster.swift": [507799931, 0]
