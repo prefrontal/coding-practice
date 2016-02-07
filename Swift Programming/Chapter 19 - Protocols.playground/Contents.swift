@@ -4,6 +4,18 @@
 
 import Cocoa
 
+// Protocol definition
+protocol TabularDataSource
+{
+    var numberOfRows:Int {get}
+    var numberOfColumns:Int {get}
+
+    func labelForRow (row:Int) -> String
+    func labelForColumn (column:Int) -> String
+
+    func itemForRow (row:Int, column:Int) -> Int
+}
+
 func padding (amount:Int) -> String
 {
     var paddingString = ""
@@ -15,8 +27,18 @@ func padding (amount:Int) -> String
     return paddingString
 }
 
-func printTable (rowLabels:[String], columnLabels:[String], data:[[Int]])
+// This function definition says that dataSource must conform to both 
+// the TabularDataSource protocol and the CustomStringConvertible protocol
+// This is called protocol composition, and is preferred to TabularDataSource
+// simply inheriting the CustomStringConvertible protocol 
+func printTable (dataSource: protocol<TabularDataSource, CustomStringConvertible>)
 {
+    print ("Table: \(dataSource.description)")
+
+    // Create arrays of the row and column labels
+    let rowLabels = (0 ..< dataSource.numberOfRows).map {dataSource.labelForRow($0)}
+    let columnLabels = (0 ..< dataSource.numberOfColumns).map {dataSource.labelForColumn($0)}
+
     // Create an array of the width of each row label
     let rowLabelWidths = rowLabels.map { $0.characters.count }
 
@@ -38,15 +60,16 @@ func printTable (rowLabels:[String], columnLabels:[String], data:[[Int]])
 
     print (firstRow)
 
-    for (i, row) in data.enumerate()
+    for i in 0 ..< dataSource.numberOfRows
     {
         // Pad the row label out so they are all the same length
         let paddingAmount = maxRowLabelWidth - rowLabelWidths[i]
         var out = rowLabels[i] + padding(paddingAmount) + " |"
 
         // Append each item in this row to our string
-        for (j, item) in row.enumerate()
+        for j in 0 ..< dataSource.numberOfColumns
         {
+            let item = dataSource.itemForRow(i, column: j)
             let itemString = " \(item) |"
             let paddingAmount = columnWidths[j] - itemString.characters.count
             out += padding(paddingAmount) + itemString
@@ -64,10 +87,15 @@ struct Person
     let yearsOfExperience:Int
 }
 
-struct Department
+struct Department: TabularDataSource, CustomStringConvertible
 {
     let name:String
     var people = [Person]()
+
+    var description:String
+    {
+        return "Department (\(name))"
+    }
 
     init (name:String)
     {
@@ -78,6 +106,42 @@ struct Department
     {
         people.append(person)
     }
+
+    var numberOfRows:Int
+    {
+        return people.count
+    }
+
+    var numberOfColumns:Int
+    {
+        return 2
+    }
+
+    func labelForRow(row: Int) -> String
+    {
+        return people[row].name
+    }
+
+    func labelForColumn(column: Int) -> String
+    {
+        switch column
+        {
+        case 0: return "Age"
+        case 1: return "Years of Exerience"
+        default: fatalError("Invalid Column!")
+        }
+    }
+
+    func itemForRow(row: Int, column: Int) -> Int
+    {
+        let person = people[row]
+        switch column
+        {
+        case 0: return person.age
+        case 1: return person.yearsOfExperience
+        default: fatalError("Invalid Column!")
+        }
+    }
 }
 
 var department = Department (name:"Engineering")
@@ -85,4 +149,4 @@ department.addPerson(Person(name:"Joe", age:30, yearsOfExperience:6))
 department.addPerson(Person(name:"Karen", age:40, yearsOfExperience:18))
 department.addPerson(Person(name:"Fred", age:50, yearsOfExperience:20))
 
-printTable (rowLabels, columnLabels: columnLabels, data:data)
+printTable (department)
