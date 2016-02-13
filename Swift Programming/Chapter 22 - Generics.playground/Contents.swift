@@ -151,3 +151,91 @@ print (checkIfDescriptionsMatch(Float(1.0), Double(1.0)))
 
 // Associated type protocols
 
+struct StackGenerator<T>: GeneratorType
+{
+    var stack: SeqStack<T>
+    
+    mutating func next () -> T?
+    {
+        return stack.pop()
+    }
+}
+
+struct SeqStack<Element>:SequenceType
+{
+    var items = [Element]()
+    
+    mutating func push (newItem:Element)
+    {
+        items.append (newItem)
+    }
+    
+    mutating func pop () -> Element?
+    {
+        guard !items.isEmpty else {return nil}
+        
+        return items.removeLast()
+    }
+    
+    func map<U> (f:Element -> U) -> mapStack<U>
+    {
+        var mappedItems = [U]()
+        for item in items
+        {
+            mappedItems.append (f(item))
+        }
+        
+        return mapStack<U>(items:mappedItems)
+    }
+    
+    func generate() -> StackGenerator<Element>
+    {
+        return StackGenerator (stack:self)
+    }
+}
+
+var genStack = SeqStack<Int>()
+genStack.push (10)
+genStack.push (20)
+genStack.push (30)
+
+var myStackGenerator = StackGenerator (stack:genStack)
+
+while let value = myStackGenerator.next()
+{
+    print ("Got \(value)")
+}
+
+for value in genStack
+{
+    print ("for-in loop: got \(value)")
+}
+
+// --------------------------------------------------
+
+// Type constraint where clauses
+
+func pushItemsOntoStack<Element, S:SequenceType where S.Generator.Element == Element> (inout stack: SeqStack<Element>, fromSequence sequence:S)
+{
+    for item in sequence
+    {
+        stack.push (item)
+    
+    }
+}
+
+pushItemsOntoStack(&genStack, fromSequence: [1,2,3])
+
+for value in genStack
+{
+    print ("After pushing: got \(value)")
+}
+
+var myOtherStack = SeqStack<Int>()
+pushItemsOntoStack (&myOtherStack, fromSequence: [1,2,3])
+pushItemsOntoStack (&genStack, fromSequence: myOtherStack)
+
+for value in genStack
+{
+    print ("After pushing items onto stack, got \(value)")
+}
