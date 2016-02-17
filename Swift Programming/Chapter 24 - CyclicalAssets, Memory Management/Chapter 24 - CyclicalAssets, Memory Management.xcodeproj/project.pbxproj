@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087D59541C74490500599CCD /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087D59531C74490500599CCD /* Asset.swift */; };
+		087D59561C744C4100599CCD /* Accountant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087D59551C744C4100599CCD /* Accountant.swift */; };
 		08F363771C72CC5D0066A843 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F363761C72CC5D0066A843 /* main.swift */; };
 		08F3637E1C72CCCB0066A843 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3637D1C72CCCB0066A843 /* Person.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		087D59531C74490500599CCD /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		087D59551C744C4100599CCD /* Accountant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
 		08F363731C72CC5D0066A843 /* Chapter 24 - CyclicalAssets, Memory Management */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Chapter 24 - CyclicalAssets, Memory Management"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F363761C72CC5D0066A843 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		08F3637D1C72CCCB0066A843 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 			children = (
 				08F363761C72CC5D0066A843 /* main.swift */,
 				08F3637D1C72CCCB0066A843 /* Person.swift */,
+				087D59531C74490500599CCD /* Asset.swift */,
+				087D59551C744C4100599CCD /* Accountant.swift */,
 			);
 			path = "Chapter 24 - CyclicalAssets, Memory Management";
 			sourceTree = "<group>";
@@ -122,8 +128,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087D59541C74490500599CCD /* Asset.swift in Sources */,
 				08F3637E1C72CCCB0066A843 /* Person.swift in Sources */,
 				08F363771C72CC5D0066A843 /* main.swift in Sources */,
+				087D59561C744C4100599CCD /* Accountant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +251,7 @@
 				08F3637C1C72CC5D0066A843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
