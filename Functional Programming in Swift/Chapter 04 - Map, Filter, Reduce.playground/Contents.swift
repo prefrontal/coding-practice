@@ -53,9 +53,62 @@ func doubleArray2 (xs:[Int]) -> [Int]
 
 // You can even use it to calculate booleans
 // But, there is a type error here
+// Cnnot convert value of type Bool to closure type Int
 
 func isEvenArray (xs:[Int]) -> [Bool]
 {
     computeIntArray (xs) {x in x % 2 == 0}
 }
+
+// You could define a new version of the function with type Int -> Bool
+
+func computeBoolArray (xs:[Int], f:Int->Bool) -> [Bool]
+{
+    var result:[Bool] = []
+
+    for x in xs
+    {
+        result.append (f(x))
+    }
+
+    return result
+}
+
+// You would have to write a new version for every type you want to support
+// Or, you could use generics...
+
+func genericComputeArray<U> (xs:[Int], f:Int->U) -> [U]
+{
+    var result:[U] = []
+
+    for x in xs
+    {
+        result.append (f(x))
+    }
+
+    return result
+}
+
+// You can also abstract the input type, it doesn't have to be Int
+
+func map<T,U> (xs:[T], f:T->U) -> [U]
+{
+    var result:[U] = []
+
+    for x in xs
+    {
+        result.append (f(x))
+    }
+
+    return result
+}
+
+// The original genericComputeArray can be computed using map
+
+func computeIntArray<T> (xs:[Int], f:Int -> T) -> [T]
+{
+    return map (xs,f)
+}
+
+
 
