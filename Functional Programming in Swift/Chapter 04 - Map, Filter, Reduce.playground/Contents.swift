@@ -110,5 +110,53 @@ func computeIntArray<T> (xs:[Int], f:Int -> T) -> [T]
     return map (xs,f)
 }
 
+// ---------------------------------------------------------------------------------------------------------------------
+
+let exampleFiles = ["README.md", "HelloWorld.swift", "HelloSwift.swift", "FlappyBird.swift"]
+
+// Generate an array of all the Swift files
+func getSwiftFiles (files:[String]) -> [String]
+{
+    var result:[String] = []
+
+    for file in files
+    {
+        if file.hasSuffix (".swift")
+        {
+            result.append(file)
+        }
+    }
+
+    return result
+}
+
+getSwiftFiles (exampleFiles)
+
+// Make a generic filter function
+func filter<T> (xs:[T], check: T -> Bool) -> [T]
+{
+    var result:[T] = []
+
+    for x in xs
+    {
+        if check(x)
+        {
+            result.append(x)
+        }
+    }
+
+    return result
+}
+
+// Now use the generic filter function to find Swift files
+func getSwiftFiles2 (files:[String]) -> [String]
+{
+    return filter (files) {file in file.hasSuffix(".swift")}
+}
+
+// The Swift array already has a filter function
+exampleFiles.filter {file in file.hasSuffix(".swift")}
+
+// ---------------------------------------------------------------------------------------------------------------------
 
 
