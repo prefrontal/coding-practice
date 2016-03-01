@@ -133,3 +133,107 @@ else
     print ("Unknown person, address, or state")
 }
 
+// You can define a function that operates similarly to the ? operator
+
+func incrementOptional (optional:Int?) -> Int?
+{
+    if let x = optional
+    {
+        return x + 1
+    }
+    else
+    {
+        return nil
+    }
+}
+
+// Generalize incrementOptional and the ? operator
+
+func map<T,U> (optional:T?, f:T -> U) -> U?
+{
+    if let x = optional
+    {
+        return f(x)
+    }
+    else
+    {
+        return nil
+    }
+}
+
+// Now you can rewrite increment optional 
+
+func incrementOptional2 (optional:Int?) -> Int?
+{
+    return optional.map {x in x + 1}
+}
+
+// To add optionals you could use nested if statements
+
+func addOptionals (optionalX:Int?, optionalY:Int?) -> Int?
+{
+    if let x = optionalX
+    {
+        if let y = optionalY
+        {
+            return x + y
+        }
+    }
+
+    return nil
+}
+
+// Or, you can bind multiple optionals at the same time
+
+func addOptionals2 (optionalX:Int?, optionalY:Int?) -> Int?
+{
+    if let x = optionalX, y = optionalY
+    {
+        return x + y
+    }
+
+    return nil
+}
+
+// Suppose we have a dictionary of countries and their capitals
+
+let capitals = ["France":"Paris", "Spain":"Madrid", "The Netherlands":"Amsterdam", "Belgium":"Brussels"]
+
+// Look up population based on capitals dictionary and cities dictionary
+
+func populationOfCapital (country:String) -> Int?
+{
+    if let capital = capitals[country], population = cities[capital]
+    {
+        return population * 1000
+    }
+
+    return nil
+}
+
+// Now, consider the flatMap function from the standard library
+
+func flatMap<A,B> (optional:A?, f:A -> B?) -> B?
+{
+    if let x = optional
+    {
+        return f(x)
+    }
+    else
+    {
+        return nil
+    }
+}
+
+// Now, use flatMap to add optionals and get population
+
+func addOptionals3 (optionalX:Int?, optionalY:Int?) -> Int?
+{
+    return flatMap(optionalX) {x in flatMap(optionalY) {y in x + y}}
+}
+
+func populationOfCapital2 (country:String) -> Int?
+{
+    return flatMap(capitals[country]) {capital in flatMap(cities[capital]) {population in population * 1000}}
+}
+
