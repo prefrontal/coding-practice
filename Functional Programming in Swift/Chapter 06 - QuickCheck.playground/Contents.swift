@@ -71,9 +71,105 @@ extension String:Arbitrary
     {
         let randomLength = random (from:0, to:40)
         let randomCharacters = tabulate (randomLength) {_ in Character.arbitrary()}
-        return reduce(randomCharacters, ""){$0 + String($1)}
+        return randomCharacters.reduce(""){$0 + String($1)}
     }
 }
 
-// Now yo ucan generate random strings like this:
+// Now you can generate random strings like this:
 String.arbitrary()
+
+// Implementing the check function
+func check1<A:Arbitrary> (message:String, prop:A -> Bool) -> ()
+{
+    let numberOfIterations = 10
+
+    for _ in 0..<numberOfIterations
+    {
+        let value = A.arbitrary()
+        if !prop(value)
+        {
+            print ("\"\(message)\" doesn't hold: \(value)")
+            return
+        }
+    }
+
+    print ("\"\(message)\" passed \(numberOfIterations) tests")
+}
+
+func area (size:Int) -> Double
+{
+    return Double(size * size)
+}
+
+check1 ("Area should be at least 0"){size in area(size) >= 0}
+
+check1 ("Every string starts with Hello") {(s:String) in s.hasPrefix("Hello")}
+
+// Protocol that defines a new method on a type to make Int smaller
+protocol Smaller
+{
+    func smaller() -> Self?
+}
+
+// Extension to add the smaller function to Int
+extension Int:Smaller
+{
+    func smaller() -> Int?
+    {
+        return self == 0 ? nil : self / 2
+    }
+}
+
+// Test it out
+100.smaller()
+
+// Extension to add smaller function to String
+extension String:Smaller
+{
+    func smaller() -> String?
+    {
+        return isEmpty ? nil : dropFirst(self)
+    }
+}
+
+// Redefine the Arbitrary protocol to extend the Smaller protocol
+protocol Arbitrary:Smaller
+{
+    static func arbitrary() -> Self
+}
+
+func iterateWhile<A> (condition condition: A -> Bool, initialValue:A, next: A -> A?) -> A
+{
+    if let x = next (initialValue) where condition(x)
+    {
+        return iterateWhile (condition:condition, initialValue:x, next:next)
+    }
+
+    return initialValue
+}
+
+// Check function with iteration/smaller
+// Implementing the check function
+func check2<A:Arbitrary> (message:String, prop:A -> Bool) -> ()
+{
+    let numberOfIterations = 10
+
+    for _ in 0..<numberOfIterations
+    {
+        let value = A.arbitrary()
+
+        if !prop(value)
+        {
+            let smallerValue = iterateWhile ({!prop($0)}, value) {$0.smaller()}
+
+            print ("\"\(message)\" doesn't hold: \(smallerValue)")
+            return
+        }
+    }
+
+    print ("\"\(message)\" passed \(numberOfIterations) tests")
+}
+
+// -------------------------------------------------------------------------------------------------------------------
+
+
