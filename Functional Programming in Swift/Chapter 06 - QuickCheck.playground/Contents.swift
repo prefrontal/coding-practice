@@ -172,4 +172,78 @@ func check2<A:Arbitrary> (message:String, prop:A -> Bool) -> ()
 
 // -------------------------------------------------------------------------------------------------------------------
 
+// Quicksort example
+
+func qsort (var array:[Int]) -> [Int]
+{
+    if array.isEmpty {return []}
+    let pivot = array.removeAtIndex(0)
+    let lesser = array.filter {$0 < pivot}
+    let greater = array.filter {$0 > pivot}
+    return qsort(lesser) + [pivot] + qsort(greater)
+}
+
+// Check qsort. This won't work because [Int] doesn't conform to Arbitrary
+check2 ("qsort should behave like sort") {(x:[Int]) in return qsort(x) == x.sort(<)}
+
+// Implement smaller for [Int]
+extension Array:Smaller
+{
+    func smaller() -> [T?]
+    {
+        if !isEmpty
+        {
+            return Array (dropFirst(self))
+        }
+
+        return nil
+    }
+}
+
+// Generate an array of arbitrary length
+func arbitraryArray<X:Arbitrary> () -> [X]
+{
+    let randomLength = Int(arc4random() % 50)
+    return tabulate (randomLength) {_ in return X.arbitrary()}
+}
+
+struct ArbitraryI<T>
+{
+    let arbitrary: () -> T
+    let smaller: T -> T?
+}
+
+func checkHelper<A> (arbitraryInstance:ArbitraryI<A>, prop:A-> Bool, message:String) -> ()
+{
+    let numberOfIterations = 100
+
+    for _ in 0..<numberOfIterations
+    {
+        let value = arbitraryInstance.arbitrary()
+
+        if !prop(value)
+        {
+            let smallerValue = iterateWhile (condition: {!prop($0)}, initialValue: value, next: arbitraryInstance.smaller)
+            print ("\"\(message)\" doesn't hold: \(smallerValue)")
+            return
+        }
+    }
+
+    print ("\"\(message)\" passed \(numberOfIterations) tests")
+}
+
+func checkX<X:Arbitrary> (message:String, prop:X -> Bool) -> ()
+{
+    let instance = ArbitraryI (arbitrary: {X.arbitrary()}, smaller: {$0.smaller()})
+    checkHelper (instance, prop, message)
+}
+
+// Types without an arbitrary instance can use an overloaded check function
+func check<X:Arbitrary> (message:String, prop:[X] -> Bool) -> ()
+{
+    let instance = ArbitraryI (arbitrary:arbitraryArray, smaller:{(x:[X]) in x.smaller()})
+    checkHelper (instance, prop, message)
+}
+
+check ("qsort should behave like sort") {(x:[Int]) in return qsort(x) == x.sort(<)}
 
