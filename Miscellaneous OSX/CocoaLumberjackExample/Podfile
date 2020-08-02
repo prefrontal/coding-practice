@@ -1,2 +1,0 @@
-platform :osx, '7.0'
-pod 'CocoaLumberjack'
